@@ -6,17 +6,94 @@ Primera pagina web
     <head>
         <title>TECH_SHOP</title>
         <meta charset="UTF-8">
+        <link href="ccs/estilos.css" rel="stylesheet" type="text/css"/>
+        <style>
+            a {
+                background-color: blue;
+                color: white;
+                   
+            }
+            
+            header {
+                text-aling: center;
+                background-color: black;
+                color:white
+            }
+            article header {
+                text-aling: center;
+                background-color: green;
+                color:black
+            } 
+            figcaption {
+                background-color: violet;
+                color:yellow;
+            }                 
+        </style>
     </head>
     <body>
-        <a href="ejemplo5.html">Back</a> |
-        <a href="index.html">Home</a> |
-        <a href="ejemplo2.html">Next</a> 
-        <h1 style="text-aling: center;background-color: black;color:white">Pagina Principal</h1>
-        <p>Esta es la primera pagina del curso web y patrones</p>
+        <header>
+            <h1 style="text-aling: center;background-color: black;color:white">Pagina Principal</h1>
+        </header> 
+        <nav>
+            <a href="ejemplo6.html">Back</a> |
+            <a href="index.html">Home</a> |
+            <a href="ejemplo2.html">Next</a> 
+        </nav>
+        <aside id="aviso">
+            <h2>La promo de un producto</h2>
+            <p>Esta es la primera pagina del curso web y patrones</p>
+        </aside>
+        <section>
+            <h2>Nuestros productos</h2>
+            <article>
+                <header>
+                    <h2>Producto 001</h2>
+                </header>
+                <p class="producto"> Lorem ipsum dolor sit amet consectetur adipiscing elit orci habitasse, tristique vivamus velit enim dui magna nisi semper.</p> 
+                <figure>
+                <img src="img/Marmota_flaviventris_standing_S_of_Donahue_Pass.jpg" alt="" width="75"/>
+                <figcaption>25.000</figcaption>
+                </figure>
+                <footer>
+                    <a href="#">comprar ahora...</a>
+                </footer>
+            </article>
+            
+            <article>
+                <header>
+                    <h2>Producto 002</h2>
+                </header>
+                <p class="producto"> Lorem ipsum dolor sit amet consectetur adipiscing elit orci habitasse, tristique vivamus velit enim dui magna nisi semper.</p> 
+                <figure>
+                <img src="img/Marmota_flaviventris_standing_S_of_Donahue_Pass.jpg" alt="" width="75"/>
+                <figcaption>25.000</figcaption>
+                </figure>
+                <footer>
+                    <a href="#">comprar ahora...</a>
+                </footer>
+            </article>
+            
+            <article>
+                <header>
+                    <h2>Producto 003</h2>
+                </header>
+                <p class="producto"> Lorem ipsum dolor sit amet consectetur adipiscing elit orci habitasse, tristique vivamus velit enim dui magna nisi semper.</p> 
+                <figure>
+                <img src="img/Marmota_flaviventris_standing_S_of_Donahue_Pass.jpg" alt="" width="75"/>
+                <figcaption>25.000</figcaption>
+                </figure>
+                <footer>
+                    <a href="#">comprar ahora...</a>
+                </footer>
+            </article>
         <p> Lorem ipsum dolor sit amet consectetur adipiscing elit orci habitasse, tristique vivamus velit enim dui magna nisi semper.</p> 
         <p>Primis placerat augue non a magna inceptos pulvinar nec varius proin felis, accumsan viverra bibendum maecenas condimentum elementum gravida donec urna natoque hac, molestie hendrerit quis nullam cras nam porta at dapibus aliquam. </p>
         <p>Tellus accumsan habitant tempus potenti nulla elementum inceptos lobortis dui, metus ac placerat pulvinar morbi fringilla ridiculus nisl aenean, eleifend ornare velit purus convallis sed litora quis.</p>
         <p style="text-aling: center"> Mauris ridiculus nulla porta hendrerit felis, imperdiet tristique nam egestas et, dis ullamcorper vehicula curabitur.</p>
-        <p> Mollis mi id elementum vivamus hendrerit justo ridiculus himenaeos at, odio placerat orci posuere aliquet suspendisse tincidunt faucibus est ullamcorper, tempus praesent habitasse per leo massa donec nascetur. Blandit vivamus ad pulvinar velit vulputate facilisi praesent vehicula vel nullam dui pharetra, ante dis malesuada nam elementum magna vitae sapien lectus rutrum.</p>
+        <p style="text-align: right"> Mollis mi id elementum vivamus hendrerit justo ridiculus himenaeos at, odio placerat orci posuere aliquet suspendisse tincidunt faucibus est ullamcorper, tempus praesent habitasse per leo massa donec nascetur. Blandit vivamus ad pulvinar velit vulputate facilisi praesent vehicula vel nullam dui pharetra, ante dis malesuada nam elementum magna vitae sapien lectus rutrum.</p>
+        </section>
+        <footer>
+            <h3>Sitio web desarrolado en IITC 2022 &copy</h3>
+        </footer>
     </body>
 </html>

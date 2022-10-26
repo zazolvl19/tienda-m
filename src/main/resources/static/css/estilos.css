@@ -1,0 +1,35 @@
+            a {
+                background-color: blue;
+                color: white;
+                   
+            }
+            a:hover {
+                background-color: red;
+                font-size: 22px;
+                color : white;
+            }
+            
+            header {
+                text-aling: center;
+                background-color: black;
+                color:white
+            }
+            article header {
+                text-aling: center;
+                background-color: green;
+                color:black
+            } 
+            figcaption {
+               color: red;
+            }        
+            
+            #aviso {
+                background-color: #b381cc
+            }
+            
+            .producto{
+                background-color: #b31046
+            }
+            .algo{
+                
+            }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TECH_SHOP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <section>
+            <h2>ejemplo de form</h2>
+            <h3>Informacion de registro</h3>
+            <form action="registro.jsp" method="POST">
+                <input type="hidden" name="idCliente" value="123456789"/>
+                <label>nombre complet</label>
+                <input type="text" name="nombre" placeholder="apellido1 apellido2 nombre"/>
+                <br/>
+                <label>correo:</label>
+                <input type="email"
+                       name="correo"
+                       placeholder="juan@gmail.com"/>
+                <br/>
+                <label>comida preferida: </label>
+                coreana: <input type="checkbox"
+                       name="coreana"/>
+                spanish <input type="checkbox"
+                       name="spanish"/>                
+                italiana <input type="checkbox"
+                       name="italiana"/>  
+                <br/>
+                <label>fecha de cita</label>
+                <input type="date"
+                       name="cita"/>
+                <br/>
+                <br/>
+                <label>hora de cita</label>
+                <input type="time"
+                       name="hora"/>
+                <br/>    
+                          
+                <label>foto</label>
+                <input type="file"
+                       name="foto"/>
+                <br/> 
+                <br/>    
+                          
+                <label>edad:</label>
+                <input type="number"
+                       name="edad" min="18" max="35"/>
+                <br/>        
+                <br/>    
+                          
+                <label>color preferido: </label>
+                <input type="radio" name="color" value="azul"/>
+                azul<input type="radio" name="color" value="azul">
+                rojo<input type="radio" name="color" value="rojo">
+                verde<input type="radio" name="color" value="verde">
+                <br/>
+                <br/> 
+                <label>clave de ingreso: </label>
+                <input type="password" name="clave" />
+           
+                <br/>
+                
+                <br/>
+                
+                <input type="submit" name="enviar" value="registrar"/>
+            </form>
+        </section>
+    </body>
+</html>
