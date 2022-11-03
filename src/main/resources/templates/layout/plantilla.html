@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns="http://www.w3.org/1999/xhtml">
+    
     <head>
         <title>TECH_SHOP</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
       
-        <header th:fragment="header">
-            <h1>TECH_SHOP</h1>
+        <header th:fragment="header" class="header">
+            <nav class="nav">
+            <a th:href="@{/}" class="nav-link logo">TechShop</a>
+            <ul class="nav-menu">
+                    <li class="nav-menu-item">
+                        <a class="nav-link nav-menu-link" th:href="@{/cliente/listado}">
+                            Clientes</a>
+                    </li>    
+                    <li class="nav-menu-item">
+                        <a class="nav-link nav-menu-link" th:href="@{/articulo/listado}">
+                            Articulos</a>
+                    </li>
+                   <li class="nav-menu-item"> 
+                        <a class="nav-link nav-menu-link" th:href="@{/categoria/listado}">
+                            Categorias</a>
+                   </li>  
+                </ul>
+            </<nav>
+                
         </header>   
         
-        <footer th:fragment="footer">
-            <p style="text-align: center">&COPY;Derechos Reservados 2022</p>
+        <footer th:fragment="footer" class="footer">
+            <p>&COPY;Derechos Reservados 2022</p>
         </footer>
-        
-        
-        
+    
     </body>
 </html>

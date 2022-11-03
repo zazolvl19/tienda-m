@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -22,37 +21,34 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name="cliente")
+@Table(name="articulo")
 
-public class Cliente implements Serializable {
+public class Articulo implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_cliente")
-    private Long idCliente;
+    @Column(name="id_articulo")
+    private Long idArticulo;
+    private Long idCategoria;
+    private String descripcion;
+    private String detalle;
+    private double precio;
+    private int existencias;
+    private boolean activo;
     
-            
-    private String nombre;
-    private String apellidos;
-    private String correo;
-    private String telefono;
-    
-    @JoinColumn(name="id_credito",referencedColumnName="id_credito")
-    @ManyToOne
-    private Credito credito;
-
-    public Cliente() {
+    public Articulo() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String telefono, Credito credito) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.credito = credito;
+    public Articulo(Long idCategoria, String descripcion, String detalle, double precio, int existencias, boolean activo) {
+        this.idCategoria = idCategoria;
+        this.descripcion = descripcion;
+        this.detalle = detalle;
+        this.precio = precio;
+        this.existencias = existencias;
+        this.activo = activo;
     }
-
+    
 }
 

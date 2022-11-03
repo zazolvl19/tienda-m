@@ -4,11 +4,7 @@
  */
 package com.tienda.controller;
 
-import com.tienda.controller.*;
-import com.tienda.domain.Cliente;
-import com.tienda.dao.ClienteDao;
-import com.tienda.service.ClienteService;
-import java.util.Arrays;
+import com.tienda.service.ArticuloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,24 +18,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
     
     @Autowired
-    private ClienteService clienteService;
+    private ArticuloService clienteService;
     
     
     @GetMapping("/")
     public String inicio(Model model) {
-        var texto="estamos en semana 4";
-        model.addAttribute("mensaje",texto);
-        
-       /* Cliente cliente1 = new Cliente("Juan","Perez Moreno","jperez@gmail.com","8888-3555");
-        Cliente cliente2 = new Cliente("Pedro","Moreno Perez","Pedro@gmail.com","8888-5565");
-        Cliente cliente3 = new Cliente("Rebeca","Lopez Marquez","Rebeca@gmail.com","8888-4555");
-        
-        var clientes = Arrays.asList(cliente1,cliente2,cliente3); */
-       
-       var clientes = clienteService.getClientes();
-        
-        model.addAttribute("clientes",clientes);
-        
+         
+       var articulos = clienteService.getArticulos(true);
+        model.addAttribute("articulo",articulos);
         return "index";
     }
 }
