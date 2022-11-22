@@ -5,6 +5,7 @@
 package com.tienda.dao;
 
 import com.tienda.domain.Cliente;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -12,6 +13,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author isaac
  */
 public interface ClienteDao extends JpaRepository<Cliente,Long> {
+    public List<Cliente> findByCorreo(String correo);   
     
+    public List<Cliente> findByApellidos(String apellidos);
     
 }

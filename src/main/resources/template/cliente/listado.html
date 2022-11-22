@@ -9,26 +9,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <head>
         <title>TECH_SHOP</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-            
-        <div>Saludos</div>
-        <p th:text="${mensaje}"></p>>
-        <p>[[${mensaje}]]</p>
-        
-        <h2>Listado de clientes</h2>
-        <a th:href="@{/cliente/nuevo">Nuevo Cliente</a>
+         <div class="contenido">
+        <h2>[[#{cliente.nuevo}]]</h2>
+        <a th:href="@{/cliente/nuevo">[[#{cliente.nuevo}]]</a>
         <div th:if="${clientes !null and !clientes.empty}">
         <table border="1">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Eliminar</th>
-                    <th>Modificar</th>
+                    <th>[[#{cliente.nombre</th>
+                    <th>[[#{cliente.apellidos</th>
+                    <th>[[#{cliente.correo</th>
+                    <th>[[#{cliente.telefono</th>
+                    <th>[[#{cliente.limite</th>
+                    <th>[[#{cliente.eliminar</th>
+                    <th>[[#{cliente.actualizar</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,15 +35,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <td>[[${cliente.apellidos}]]</td>
                     <td>[[${cliente.correo}]]</td>
                     <td>[[${cliente.telefono}]]</td>
-                    <td><a th: href="@{/eliminarCliente/}+ ${cliente.idCliente}">Eliminar</td>
-                    <td><a th: href="@{/modificarCliente/}+ ${cliente.idCliente}">Modificar</td>
+                    <td><a th: href="@{/eliminarCliente/}+ ${cliente.idCliente}"><th>[[#{accion.eliminar}]]</th></td>
+                    <td><a th: href="@{/modificarCliente/}+ ${cliente.idCliente}">[[#{accion.modificar}]]</td>
                 </tr>
             </tbody>
         </table>
         </div>
         <div th:if="${clientes ==null or clientes.empty}">
-            <h2>No se tienen clientes que mostrar!</h2>
-        </div>  
+            <h2>[[#{cliente.no mostrar}]]</h2>
+        </div>
         
         
         <footer th:replace="layout/plantilla :: footer"/>

@@ -3,47 +3,45 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html
-    xmls:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
     
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TECH_SHOP</title>
         <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css/">
-        
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
+        <header th:replace="layout/plantilla :: header" class="header"/>
             
-        <div Class="contenido">
-        <p th:text="${mensaje}"></p>>
-        <p>[[${mensaje}]]</p>
+       <div class="contenido">
         
-        <h2>Listado de articulo</h2>
-        <div th:if="${articulo !null and !articulo.empty}">
+        <h2>[[#{articulo.titulo}]]</h2>
+        <a th:href="@{/articulo/nuevo">Nuevo Articulo</a>
+        <div th:if="${articulos !null and !articulos.empty}">
         <table border="1">
             <thead>
                 <tr>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
+                    <th>[[#{articulo.descripcion}]]</th>
+                    <th>[[#{articulo.precio}]]</th>
+                     <th>[[#{articulo.comprar}]]</th>
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="cliente: ${articulo}">
-                    <td>[[${cliente.descripcion}]]</td>
-                    <td>[[${style="text-aling: rigth">[[#numbers.formatDecimal(articulo.precio,3,2)}]]</td>
-                    <td>[[${cliente.correo}]]</td>
-                    <td>[[${cliente.telefono}]]</td>
-                    <td><a th: href="@{/carrito/agregar/}+ ${articulo.idArticulo}">Comprar</td>
+                <tr th:each="articulo: ${articulos}">
+                    <td>[[${articulo.descripcion}]]</td>
+                    <td style="text-align: right">[[${#numbers.formatDecimal(articulo.precio,3,2)}]]</td>
+                    <td><a th: href="@{/carrito/agregar/}+ ${articulo.idArticulo}"> <th>[[#{articulo.comprar}]]</th></td>
                 </tr>
             </tbody>
         </table>
         </div>
-        <div th:if="${articulo ==null or articulo.empty}">
-            <h2>No se tienen articulo que mostrar!</h2>
+        <div th:if="${articulos ==null or articulos.empty}">
+            <h2> <th>[[#{articulo.no_mostrar}]]</th></h2>
         </div>  
-       </div> 
         
+        </div>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

@@ -29,4 +29,9 @@ public interface ClienteService {
     
     //elimina el registro que tiene el id igual a cliente.id
     public void delete(Cliente cliente);
+    
+    //retorna la lista de clientes con apellidos especificos
+    public List<Cliente> getClientesPorApellidos(String apellidos);
+    
+
 }
