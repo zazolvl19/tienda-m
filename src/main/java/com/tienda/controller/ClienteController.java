@@ -3,12 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.controller;
-
-import com.tienda.controller.*;
 import com.tienda.domain.Cliente;
-import com.tienda.dao.ClienteDao;
 import com.tienda.service.ClienteService;
-import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +24,15 @@ public class ClienteController {
     
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-        var clientes = clienteService.getClientes();
-       // var clientes = clienteService.getClientesPorApellidos("Mena Loria");
+        var clientes=clienteService.getClientes();     
+        var limiteTotal=0;
+        for (var c: clientes) {
+            limiteTotal+=c.credito.limite;
+        }
+        model.addAttribute("limiteTotal",limiteTotal);
+        model.addAttribute("totalClientes",clientes.size());
+        
         model.addAttribute("clientes",clientes);
-           
         return "/cliente/listado";
     }
     
